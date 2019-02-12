@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+div.app-navigation {
+  width: 20%;
+  cursor: pointer;
+  background-color: royalblue;
+  border-style: dashed;
+}
+
+div.add-element, div.delete-element, div.edit-element {
+  width: 50%;
+  border-style: dashed;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+div.submit {
+  width: 15%;
+  border-style: dashed;
+  text-align: center;
+  background-color: green;
+  
+}

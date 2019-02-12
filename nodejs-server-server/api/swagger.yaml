@@ -1,0 +1,91 @@
+---
+swagger: "2.0"
+info:
+  description: "bookshelf server"
+  version: "1.0.0"
+  title: "bookshelf"
+host: "localhost:8080"
+basePath: "/v1"
+schemes:
+- "http"
+paths:
+  /addBook:
+    put:
+      summary: "add book"
+      description: "add book"
+      operationId: "addBookPUT"
+      consumes:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "book"
+        required: true
+        schema:
+          $ref: "#/definitions/Book"
+      responses:
+        200:
+          description: "ok"
+      x-swagger-router-controller: "Default"
+  /getBooks:
+    get:
+      summary: "return books"
+      operationId: "getBooksGET"
+      parameters: []
+      responses:
+        200:
+          description: "books"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Book"
+      x-swagger-router-controller: "Default"
+  /editBook/{bookID}:
+    post:
+      summary: "edit book description by id"
+      operationId: "editBookBookIDPOST"
+      parameters:
+      - name: "bookID"
+        in: "path"
+        description: "book id"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        200:
+          description: "ok"
+        400:
+          description: "the specified user ID is invalid"
+      x-swagger-router-controller: "Default"
+  /deleteBook/{bookID}:
+    delete:
+      summary: "delete book by id"
+      operationId: "deleteBookBookIDDELETE"
+      parameters:
+      - name: "bookID"
+        in: "path"
+        description: "book id"
+        required: true
+        type: "integer"
+        minimum: 1
+      responses:
+        200:
+          description: "ok"
+        400:
+          description: "the specified user ID is invalid"
+      x-swagger-router-controller: "Default"
+definitions:
+  Book:
+    required:
+    - "author"
+    - "name"
+    properties:
+      name:
+        type: "string"
+      author:
+        type: "string"
+      description:
+        type: "string"
+    example:
+      author: "author"
+      name: "name"
+      description: "description"
