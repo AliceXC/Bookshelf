@@ -1,4 +1,4 @@
-This project is a quick 3-hour exercise, which is composed of a React front-end, a swagger-generated client-api and backend server, programmed in HTML, CSS, JavaScript, NodeJS, SQLite3.
+This project is a quick 2-hour exercise, which is composed of a React front-end, a swagger-generated client-api and backend server, programmed in HTML, CSS, JavaScript, NodeJS, SQLite3.
 
 This project Bookshelf allows the user to add book, list all books, and remove/edit book with a given id.
 
